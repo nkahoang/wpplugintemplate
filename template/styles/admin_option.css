@@ -1,0 +1,29 @@
+/*To be included in Admin option page*/
+@import "common.css";
+label.control-label {
+  padding-top: 6px;
+}
+.form-control.k-textbox {
+  height: 32px;
+}
+.k-widget.k-datetimepicker.k-header.form-control {
+  padding: 0;
+}
+.k-widget.k-datetimepicker.k-header.form-control .k-input,
+.k-widget.k-datetimepicker.k-header.form-control .k-select {
+  height: 32px;
+}
+.k-widget.k-datetimepicker.k-header.form-control .k-select {
+  line-height: 32px;
+}
+.k-widget.k-dropdown.k-header.form-control {
+  height: 34px;
+  padding: 0;
+  margin: 0;
+}
+.k-widget.k-dropdown.k-header.form-control .k-dropdown-wrap {
+  height: 34px;
+}
+.k-widget.k-dropdown.k-header.form-control .k-dropdown-wrap .k-input {
+  line-height: 28px;
+}
