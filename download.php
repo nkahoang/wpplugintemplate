@@ -11,7 +11,7 @@ if (!isset($_REQUEST["uri"])) {
 $plugin_name = $_REQUEST["name"];
 $plugin_prefix = $_REQUEST["prefix"];
 $plugin_uri = $_REQUEST["uri"];
-$download_file_name = str_replace(" ","_",$plugin_prefix);
+$plugin_prefix = str_replace(" ","_",$plugin_prefix);
 
 function dirToArray($dir) {
     $result = array();
@@ -110,11 +110,11 @@ $file_name = __DIR__ . "/tmp/$name";
 //if true, good; if false, zip creation failed
 $options = array(
     "name" => $plugin_name,
-    "prefix" => $download_file_name,
+    "prefix" => $plugin_prefix,
     "uri" => $plugin_uri
 );
 $result = create_zip($files_to_zip, $file_name, $base_name . DIRECTORY_SEPARATOR, true, $options);
-
+$download_file_name = str_replace(" ","_",$plugin_name) . "_" . date_format(new \DateTime(), "Y_m_d__H_i_s");
 header("Content-Type: application/zip");
 header("Content-Disposition: attachment; filename=$download_file_name.zip");
 header("Content-Length: " . filesize($result));
